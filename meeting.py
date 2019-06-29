@@ -37,7 +37,6 @@ def main():
     src.link(ch1)
     ch1.link(ns)
     ns.link(kws)
-    kws.link(alexa)
 
     src.link(doa)
 

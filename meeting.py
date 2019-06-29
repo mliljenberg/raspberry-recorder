@@ -6,6 +6,7 @@ meeting listening app
 import time
 import logging
 import subprocess
+import recording
 from voice_engine.source import Source
 from voice_engine.channel_picker import ChannelPicker
 from voice_engine.kws import KWS
@@ -29,8 +30,7 @@ def main():
         direction = doa.get_direction()
         logging.info('detected {} at direction {}'.format(keyword, direction))
         pixels.wakeup(direction)
-        record = "arecord -Dac108 -f S32_LE -r 16000 -c 4 -d 10 hello.wav"
-        p = subprocess.Popen(record, shell=True)
+        recording.record()
 
     kws.on_detected = on_detected
 
@@ -53,3 +53,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+

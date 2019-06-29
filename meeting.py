@@ -5,14 +5,12 @@ meeting listening app
 
 import time
 import logging
-import subprocess
 import recording
 from voice_engine.source import Source
 from voice_engine.channel_picker import ChannelPicker
 from voice_engine.kws import KWS
 from voice_engine.ns import NS
 from voice_engine.doa_respeaker_4mic_array import DOA
-from avs.alexa import Alexa
 from pixels import pixels
 
 # TODO: Fix this function so it records for one minute then listen if anything is said,
